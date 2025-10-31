@@ -123,16 +123,15 @@ function App() {
   if (showVideo) {
     return (
       <>
-        <div className="video-container">
-          {/* DEBUG LINE ADDED HERE */}
-          {console.log("DEBUG: Trying to load GIF from path:", "/video/logogif.gif")}
+        <div className="video-container" style={{background: 'red', color: 'white', display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column'}}>
+          <h1>TEST - GIF SHOULD BE HERE</h1>
           <img 
             src="/video/logogif.gif" 
             alt="Intro Video" 
             style={{width: '100%', height: '100%', objectFit: 'cover'}}
             onLoad={() => {
               console.log("DEBUG: GIF loaded successfully!");
-              setTimeout(handleVideoFinish, 8000);
+              setTimeout(handleVideoFinish, 3000);
             }}
             onError={() => {
               console.log("DEBUG: GIF failed to load!");
