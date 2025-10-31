@@ -124,7 +124,20 @@ function App() {
   if (showVideo) {
     return (
       <>
-        <IntroVideo onFinish={handleVideoFinish} />
+        {/* VIDEO PATH UPDATE KAR DIYA HAI */}
+        <div className="video-container">
+          <video 
+            width="100%" 
+            height="100%" 
+            controls 
+            autoPlay 
+            muted 
+            onEnded={handleVideoFinish}
+          >
+            <source src="/video/Landingpage_video.webm" type="video/webm" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
         <button className="skip-button" onClick={handleSkipVideo}>
           Skip Intro
         </button>
@@ -132,7 +145,7 @@ function App() {
     );
   }
 
-  // LANDING PAGE
+  // LANDING PAGE (SAME AS BEFORE)
   return (
     <div className="main-content">
       {/* Login Modal */}
