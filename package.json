@@ -2,6 +2,7 @@
   "name": "sehyogsetu",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://ChnchalAwasthi2004.github.io/Sehyogsetu",
   "dependencies": {
     "@testing-library/jest-dom": "^6.8.0",
     "@testing-library/react": "^16.3.0",
@@ -15,7 +16,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eploy": "react-scripts eject",
+    "eject": "react-scripts eject",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
