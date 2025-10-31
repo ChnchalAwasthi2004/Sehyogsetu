@@ -282,7 +282,7 @@ function App() {
         </div>
       )}
 
-      {/* Header with Logo */}
+      {/* Header with Logo - ABSOLUTE PATH */}
       <header className="header">
         <div className="logo">
           <img src="/sehyogsetu_logo.jpg" alt="SEHYOGSETU Logo" className="logo-img" />
@@ -505,7 +505,7 @@ function App() {
         </div>
       </section>
 
-      {/* Footer */}
+      {/* Footer - ABSOLUTE PATH */}
       <footer className="footer">
         <div className="footer-content">
           <div className="footer-section">
