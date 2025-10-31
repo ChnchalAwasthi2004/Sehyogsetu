@@ -4,20 +4,11 @@ import UserProfile from "./UserProfile";
 import "./App.css";
 
 function App() {
-  const [showVideo, setShowVideo] = useState(true);
   const [showLogin, setShowLogin] = useState(false);
   const [showSignup, setShowSignup] = useState(false);
   const [currentPage, setCurrentPage] = useState('landing');
   const [loginMethod, setLoginMethod] = useState('email');
   const [showUserProfile, setShowUserProfile] = useState(false);
-
-  const handleVideoFinish = () => {
-    setShowVideo(false);
-  };
-
-  const handleSkipVideo = () => {
-    setShowVideo(false);
-  };
 
   // Login Form Data
   const [loginData, setLoginData] = useState({
@@ -119,34 +110,7 @@ function App() {
     return <UserDashboard onLogout={handleLogout} onShowProfile={handleShowProfile} />;
   }
 
-  // AGAR VIDEO CHAL RAHA HAI (AB GIF HAI)
-  if (showVideo) {
-    return (
-      <>
-        <div className="video-container" style={{background: 'red', color: 'white', display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column'}}>
-          <h1>TEST - GIF SHOULD BE HERE</h1>
-          <img 
-            src="/video/logogif.gif" 
-            alt="Intro Video" 
-            style={{width: '100%', height: '100%', objectFit: 'cover'}}
-            onLoad={() => {
-              console.log("DEBUG: GIF loaded successfully!");
-              setTimeout(handleVideoFinish, 3000);
-            }}
-            onError={() => {
-              console.log("DEBUG: GIF failed to load!");
-              alert("GIF failed to load from: /video/logogif.gif");
-            }}
-          />
-        </div>
-        <button className="skip-button" onClick={handleSkipVideo}>
-          Skip Intro
-        </button>
-      </>
-    );
-  }
-
-  // LANDING PAGE (SAME AS BEFORE)
+  // LANDING PAGE
   return (
     <div className="main-content">
       {/* Login Modal */}
