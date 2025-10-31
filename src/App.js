@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import IntroVideo from "./Innovideo";
 import UserDashboard from "./UserDashboard";
 import UserProfile from "./UserProfile";
 import "./App.css";
@@ -120,23 +119,17 @@ function App() {
     return <UserDashboard onLogout={handleLogout} onShowProfile={handleShowProfile} />;
   }
 
-  // AGAR VIDEO CHAL RAHA HAI
+  // AGAR VIDEO CHAL RAHA HAI (AB GIF HAI)
   if (showVideo) {
     return (
       <>
-        {/* VIDEO PATH UPDATE KAR DIYA HAI */}
         <div className="video-container">
-          <video 
-            width="100%" 
-            height="100%" 
-            controls 
-            autoPlay 
-            muted 
-            onEnded={handleVideoFinish}
-          >
-            <source src="/video/Landingpage_video.webm" type="video/webm" />
-            Your browser does not support the video tag.
-          </video>
+          <img 
+            src="/video/logogif.gif" 
+            alt="Intro Video" 
+            style={{width: '100%', height: '100%', objectFit: 'cover'}}
+            onLoad={() => setTimeout(handleVideoFinish, 8000)} // 8 seconds ke baad auto close
+          />
         </div>
         <button className="skip-button" onClick={handleSkipVideo}>
           Skip Intro
@@ -369,12 +362,12 @@ function App() {
         </div>
       </section>
 
-      {/* Features Section - COMPLETELY UPDATED FLIP CARDS */}
+      {/* Features Section */}
       <section id="features">
         <h2>Our Features</h2>
         <p className="section-subtitle">Comprehensive solutions for urban challenges</p>
         <div className="feature-cards">
-          {/* Waste Management - FIXED */}
+          {/* Waste Management */}
           <div 
             className="flip-card"
             onMouseEnter={(e) => e.currentTarget.classList.add('flipped')}
@@ -394,7 +387,7 @@ function App() {
             </div>
           </div>
 
-          {/* Civic Issues - FIXED */}
+          {/* Civic Issues */}
           <div 
             className="flip-card"
             onMouseEnter={(e) => e.currentTarget.classList.add('flipped')}
@@ -414,7 +407,7 @@ function App() {
             </div>
           </div>
 
-          {/* Animal Welfare - FIXED */}
+          {/* Animal Welfare */}
           <div 
             className="flip-card"
             onMouseEnter={(e) => e.currentTarget.classList.add('flipped')}
@@ -434,7 +427,7 @@ function App() {
             </div>
           </div>
 
-          {/* Real-time Tracking - FIXED */}
+          {/* Real-time Tracking */}
           <div 
             className="flip-card"
             onMouseEnter={(e) => e.currentTarget.classList.add('flipped')}
@@ -454,7 +447,7 @@ function App() {
             </div>
           </div>
 
-          {/* Secure Platform - FIXED */}
+          {/* Secure Platform */}
           <div 
             className="flip-card"
             onMouseEnter={(e) => e.currentTarget.classList.add('flipped')}
@@ -474,7 +467,7 @@ function App() {
             </div>
           </div>
 
-          {/* Reward System - FIXED */}
+          {/* Reward System */}
           <div 
             className="flip-card"
             onMouseEnter={(e) => e.currentTarget.classList.add('flipped')}
