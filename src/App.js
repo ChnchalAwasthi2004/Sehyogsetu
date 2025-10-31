@@ -124,11 +124,20 @@ function App() {
     return (
       <>
         <div className="video-container">
+          {/* DEBUG LINE ADDED HERE */}
+          {console.log("DEBUG: Trying to load GIF from path:", "/video/logogif.gif")}
           <img 
             src="/video/logogif.gif" 
             alt="Intro Video" 
             style={{width: '100%', height: '100%', objectFit: 'cover'}}
-            onLoad={() => setTimeout(handleVideoFinish, 8000)} // 8 seconds ke baad auto close
+            onLoad={() => {
+              console.log("DEBUG: GIF loaded successfully!");
+              setTimeout(handleVideoFinish, 8000);
+            }}
+            onError={() => {
+              console.log("DEBUG: GIF failed to load!");
+              alert("GIF failed to load from: /video/logogif.gif");
+            }}
           />
         </div>
         <button className="skip-button" onClick={handleSkipVideo}>
